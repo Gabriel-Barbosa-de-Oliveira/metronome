@@ -10,10 +10,14 @@ export const routes: Routes = [
   },
   {
     path: 'metronome',
-    component: Metronome
+    loadChildren: () =>
+      import('./metronome/modules/metronome.module')
+        .then(m => m.MetronomeModule)
   },
   {
     path: '**',
-    component: NotFound
+    loadChildren: () =>
+      import('./not-found/modules/not-found.module')
+        .then(m => m.NotFoundModule)
   }
 ];

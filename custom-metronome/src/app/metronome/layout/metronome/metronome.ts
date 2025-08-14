@@ -3,9 +3,10 @@ import { Header } from '../../../shared/components/header/header';
 
 @Component({
   selector: 'cm-metronome',
-  imports: [Header],
   templateUrl: './metronome.html',
-  styleUrl: './metronome.scss'
+  styleUrl: './metronome.scss',
+  standalone: false,
+
 })
 export class Metronome {
 
