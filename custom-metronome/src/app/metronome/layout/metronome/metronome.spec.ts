@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Metronome } from './metronome';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { Header } from '../../../shared/components/header/header';
 
 describe('Metronome', () => {
   let component: Metronome;
@@ -8,7 +10,9 @@ describe('Metronome', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Metronome]
+      declarations: [Metronome],
+      imports: [Header],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
